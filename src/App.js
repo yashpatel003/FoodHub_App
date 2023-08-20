@@ -15,7 +15,6 @@ import { Provider } from "react-redux";
 import store from "./utils/store";
 import Cart from "./components/Cart";
 import Login from "./Components/Login"
-// const Instamart = lazy(() => import("./components/Instamart.js"));
 
 const AppLayout = () => {
   const[user, setUser] = useState({
@@ -23,10 +22,10 @@ const AppLayout = () => {
     email: "yashjpatel2003@gmail.com",
   })
   return (
-    <Provider store={store}>
+    <Provider store={store} >
     <UserContext.Provider value={{
       user: user,
-    }}>
+    }} >
       <Header />
       <Outlet />
       <Footer />
@@ -48,12 +47,6 @@ const appRouter = createBrowserRouter([
       {
         path: "/about",
         element: <Suspense fallback={"Loading ..."}><About /></Suspense> ,
-        // children: [
-        //   {
-        //     path: "profile",
-        //     element: <Profile />,
-        //   },
-        // ],
       },
       {
         path: "/contact",
@@ -63,14 +56,6 @@ const appRouter = createBrowserRouter([
         path: "/restaurant/:id",
         element: <RestaurantMenu />,
       },
-      // {
-      //   path: "/instamart",
-      //   element: (
-      //     <Suspense fallback={<Shimmer/>}>
-      //       <Instamart />
-      //     </Suspense>
-      //   ), 
-      // },
       {
         path: "/cart",
         element: <Cart />,

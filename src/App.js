@@ -15,6 +15,8 @@ import { Provider } from "react-redux";
 import store from "./utils/store";
 import Cart from "./components/Cart";
 import Login from "./Components/Login"
+import { HashRouter as Router } from "react-router-dom";
+
 
 const AppLayout = () => {
   const[user, setUser] = useState({
@@ -69,4 +71,5 @@ const appRouter = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<RouterProvider router={appRouter} />);
+//root.render(<RouterProvider router={appRouter} />);
+root.render(<Router>{appRouter}</Router>);

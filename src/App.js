@@ -24,7 +24,7 @@ const AppLayout = () => {
     email: "yashjpatel2003@gmail.com",
   })
   return (
-    <Provider store={store} >
+    <Provider store={store}>
     <UserContext.Provider value={{
       user: user,
     }} >
